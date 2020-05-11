@@ -1,12 +1,12 @@
 {
-    "name": "sylae/validator",
+    "name": "valzargaming/validator",
 	"replace": {
         "charlottedunois/validator": "self.version"
     },
     "type": "library",
     "description": "PHP Validator for stuff.",
     "keywords": [ "validation" ],
-    "homepage": "https://github.com/sylae/Validator",
+    "homepage": "https://github.com/valzargaming/Validator",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -14,8 +14,8 @@
             "email": "github@charuru.moe"
         },
         {
-            "name": "Keira Dueck",
-            "email": "sylae@calref.net",
+            "name": "Valithor Obsidion",
+            "email": "valzargaming@gmail.com",
             "role": "Maintainer"
         }
     ],
