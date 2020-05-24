@@ -1,31 +1,42 @@
 <?php
-/**
- * Validator
- * Copyright 2017-2019 Charlotte Dunois, All Rights Reserved
- *
- * Website: https://charuru.moe
- * License: https://github.com/CharlotteDunois/Validator/blob/master/LICENSE
-**/
 
 namespace CharlotteDunois\Validation;
 
-final class CallbackRuleTest extends \PHPUnit\Framework\TestCase {
-    function testPrototype() {
-        $prototype = \CharlotteDunois\Validation\Rules\Callback::prototype(function (?string $a = null): ?string {});
+use CharlotteDunois\Validation\Rules\Callback;
+use PHPUnit\Framework\TestCase;
+
+/**
+ * Class CallbackRuleTest
+ *
+ * @author  Charlotte Dunois
+ * @see     https://charuru.moe
+ * @license https://github.com/CharlotteDunois/Validator/blob/master/LICENSE
+ * @package CharlotteDunois\Validation
+ */
+final class CallbackRuleTest extends TestCase
+{
+    public function testPrototype(): void
+    {
+        $prototype = Callback::prototype(static function (?string $a = null): ?string {
+            return $a;
+        });
         $this->assertSame('?string?=?string', $prototype);
     }
-    
-    function testPrototypeNoSignature() {
+
+    public function testPrototypeNoSignature(): void
+    {
         $this->expectException(\InvalidArgumentException::class);
-        \CharlotteDunois\Validation\Rules\Callback::prototype(function () {});
+        Callback::prototype(static function () {});
     }
-    
-    function testPrototypeArray() {
-        $prototype = \CharlotteDunois\Validation\Rules\Callback::prototype(array($this, 'prototyping'));
+
+    public function testPrototypeArray(): void
+    {
+        $prototype = Callback::prototype(array($this, 'prototyping'));
         $this->assertSame('?string?', $prototype);
     }
-    
-    function prototyping(?string $a = null) {
-        
+
+    public function prototyping(?string $a = null)
+    {
+        //
     }
 }
