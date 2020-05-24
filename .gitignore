@@ -2,6 +2,7 @@ cache
 cache/*
 sami/*
 sami.*
+.idea
 vendor
 vendor/*
 composer.lock
